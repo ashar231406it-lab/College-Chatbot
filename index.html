@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f4f0e5" />
+  <title>Student Desk | M H Saboo Siddik</title>
+  <style>
+    :root {
+      --paper: #f4f0e5;
+      --ink: #172b27;
+      --green: #1d6652;
+      --lime: #d4e45a;
+      --coral: #e56b4d;
+      --muted: #66716a;
+      --line: #d8d7c9;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background-color: var(--paper);
+      background-image: radial-gradient(#c9cbbd 0.65px, transparent 0.65px);
+      background-size: 13px 13px;
+      color: var(--ink);
+      font-family: "DM Sans", "Trebuchet MS", sans-serif;
+    }
+
+    header {
+      min-height: 82px;
+      padding: 0 clamp(22px, 6vw, 92px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      background: rgba(244, 240, 229, 0.94);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      background: var(--green);
+      color: var(--lime);
+      font-family: Georgia, serif;
+      font-size: 17px;
+      font-weight: 700;
+      transform: rotate(-5deg);
+    }
+
+    .brand-name {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-subtitle, .edition {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    main {
+      width: min(1180px, calc(100% - 48px));
+      min-height: calc(100vh - 150px);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(310px, 0.75fr);
+      align-items: center;
+      gap: clamp(48px, 9vw, 130px);
+      padding: 64px 0 72px;
+    }
+
+    .intro { max-width: 690px; }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin: 0 0 25px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 30px;
+      height: 2px;
+      background: var(--coral);
+      content: "";
+    }
+
+    h1 {
+      max-width: 720px;
+      margin: 0;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(52px, 7.5vw, 96px);
+      font-weight: 600;
+      line-height: 0.98;
+    }
+
+    h1 span { color: var(--green); font-style: italic; }
+
+    .intro-copy {
+      max-width: 490px;
+      margin: 27px 0 0;
+      color: #4f5d56;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .chat-prompt {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 40px;
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .prompt-arrow {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--ink);
+      border-radius: 50%;
+      color: var(--coral);
+      font-size: 17px;
+    }
+
+    .topics {
+      border-top: 2px solid var(--ink);
+      align-self: center;
+    }
+
+    .topics-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 0 15px;
+    }
+
+    .topics-heading h2 {
+      margin: 0;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 23px;
+      font-weight: 600;
+    }
+
+    .topics-heading span {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+
+    .topic {
+      min-height: 73px;
+      display: grid;
+      grid-template-columns: 38px 1fr 20px;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .topic-number {
+      color: var(--coral);
+      font-family: Georgia, serif;
+      font-size: 13px;
+      font-style: italic;
+    }
+
+    .topic-name {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .topic-detail {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .topic-arrow { color: var(--green); font-size: 17px; }
+
+    footer {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px clamp(22px, 6vw, 92px);
+      background: var(--ink);
+      color: #f4f0e5;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .footer-note { color: #c4cdb7; }
+
+    @keyframes arrive {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    df-messenger {
+      position: fixed;
+      right: 22px;
+      bottom: 18px;
+      width: min(390px, calc(100vw - 22px));
+      height: min(620px, calc(100vh - 90px));
+      --df-messenger-primary-color: #1d6652;
+      --df-messenger-chat-background: #fbfaf5;
+      --df-messenger-send-icon: #1d6652;
+      --df-messenger-bot-message: #e9eee2;
+      --df-messenger-user-message: #1d6652;
+      --df-messenger-font-family: "DM Sans", "Trebuchet MS", sans-serif;
+      --df-messenger-bot-message-color: #172b27;
+      --df-messenger-user-message-color: #ffffff;
+      --df-messenger-input-box-color: #ffffff;
+      --df-messenger-input-placeholder-color: #66716a;
+      --df-messenger-bot-message-border: #d8d7c9;
+      --df-messenger-icon-color: #ffffff;
+      --df-messenger-button-color: #1d6652;
+      border-radius: 8px;
+      box-shadow: 0 18px 45px rgba(23, 43, 39, 0.22);
+      overflow: hidden;
+    }
+
+    .intro, .topics { animation: arrive 650ms both; }
+    .topics { animation-delay: 120ms; }
+
+    @media (max-width: 760px) {
+      header { min-height: 72px; }
+      .edition { font-size: 9px; }
+      main {
+        width: min(100% - 40px, 560px);
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 54px 0 42px;
+      }
+      h1 { font-size: clamp(54px, 13vw, 76px); }
+      .intro-copy { font-size: 15px; }
+      .chat-prompt { margin-top: 27px; }
+      .topics { max-width: 520px; width: 100%; }
+      footer { padding-bottom: 82px; }
+      df-messenger { right: 11px; bottom: 10px; }
+    }
+
+    @media (max-width: 420px) {
+      .edition { max-width: 105px; line-height: 1.5; text-align: right; }
+      main { width: calc(100% - 36px); padding-top: 43px; }
+      .topic { min-height: 68px; }
+      footer { align-items: flex-start; flex-direction: column; gap: 6px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; }
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">MSS</div>
+      <div>
+        <p class="brand-name">M H Saboo Siddik</p>
+        <p class="brand-subtitle">College of Engineering</p>
+      </div>
+    </div>
+    <p class="edition">Student desk / 2026</p>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">Your campus, in conversation</p>
+      <h1 id="page-title">Campus life,<br /><span>less complicated.</span></h1>
+      <p class="intro-copy">A little help finding your way around college. Ask about admissions, fees, exams, timetables, or hostel life, and get pointed in the right direction.</p>
+      <div class="chat-prompt"><span class="prompt-arrow" aria-hidden="true">↘</span> Start a conversation</div>
+    </section>
+
+    <section class="topics" aria-labelledby="topics-title">
+      <div class="topics-heading">
+        <h2 id="topics-title">On the student desk</h2>
+        <span>COMMON TOPICS</span>
+      </div>
+      <div class="topic">
+        <span class="topic-number">01</span>
+        <div><p class="topic-name">Admissions</p><p class="topic-detail">Courses, eligibility, applications</p></div>
+        <span class="topic-arrow" aria-hidden="true">↗</span>
+      </div>
+      <div class="topic">
+        <span class="topic-number">02</span>
+        <div><p class="topic-name">Fees &amp; accounts</p><p class="topic-detail">Payments and fee information</p></div>
+        <span class="topic-arrow" aria-hidden="true">↗</span>
+      </div>
+      <div class="topic">
+        <span class="topic-number">03</span>
+        <div><p class="topic-name">Exams &amp; timetable</p><p class="topic-detail">Schedules, dates, exam queries</p></div>
+        <span class="topic-arrow" aria-hidden="true">↗</span>
+      </div>
+      <div class="topic">
+        <span class="topic-number">04</span>
+        <div><p class="topic-name">Hostel life</p><p class="topic-detail">Stay, facilities, student support</p></div>
+        <span class="topic-arrow" aria-hidden="true">↗</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>M H Saboo Siddik College of Engineering</span>
+    <span class="footer-note">Student assistance, one question at a time.</span>
+  </footer>
+
+  <!-- Dialogflow chatbot: keep this inside <body>, at the end -->
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+  <df-messenger
+    intent="WELCOME"
+    chat-title="College Assistance"
+    agent-id="9b0f0fd0-786c-4b0b-a7c0-47b2353c8ced"
+    language-code="en"
+  ></df-messenger>
+</body>
+</html>
